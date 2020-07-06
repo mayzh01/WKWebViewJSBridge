@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B22B82724AF4D9C006BC936 /* MAUDWKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B22B82624AF4D9C006BC936 /* MAUDWKWebView.m */; };
+		0B22B82A24AF4F64006BC936 /* NAJSMethodController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B22B82924AF4F64006BC936 /* NAJSMethodController.m */; };
+		0B54D5DC24B2C16700D7E591 /* MAUDWKWVDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54D5DB24B2C16700D7E591 /* MAUDWKWVDelegate.m */; };
+		0B54D5DF24B3014C00D7E591 /* GNAJSMethodsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54D5DE24B3014B00D7E591 /* GNAJSMethodsManager.m */; };
+		0B54D5E224B305D200D7E591 /* CallWebJSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B54D5E124B305D200D7E591 /* CallWebJSController.m */; };
 		0BE2D2AC24ACB462007058C1 /* WeakWKScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE2D2AB24ACB462007058C1 /* WeakWKScriptMessageHandler.m */; };
 		0BF1124124AAD69000587211 /* testMouse.html in Resources */ = {isa = PBXBuildFile; fileRef = 0BF1124024AAD69000587211 /* testMouse.html */; };
 		0BF8E47224A9D1910016E140 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF8E47124A9D1910016E140 /* AppDelegate.m */; };
@@ -39,6 +44,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B22B82524AF4D9C006BC936 /* MAUDWKWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAUDWKWebView.h; sourceTree = "<group>"; };
+		0B22B82624AF4D9C006BC936 /* MAUDWKWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAUDWKWebView.m; sourceTree = "<group>"; };
+		0B22B82824AF4F64006BC936 /* NAJSMethodController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NAJSMethodController.h; sourceTree = "<group>"; };
+		0B22B82924AF4F64006BC936 /* NAJSMethodController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NAJSMethodController.m; sourceTree = "<group>"; };
+		0B54D5DA24B2C16700D7E591 /* MAUDWKWVDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAUDWKWVDelegate.h; sourceTree = "<group>"; };
+		0B54D5DB24B2C16700D7E591 /* MAUDWKWVDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAUDWKWVDelegate.m; sourceTree = "<group>"; };
+		0B54D5DD24B3014B00D7E591 /* GNAJSMethodsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNAJSMethodsManager.h; sourceTree = "<group>"; };
+		0B54D5DE24B3014B00D7E591 /* GNAJSMethodsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GNAJSMethodsManager.m; sourceTree = "<group>"; };
+		0B54D5E024B305D200D7E591 /* CallWebJSController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallWebJSController.h; sourceTree = "<group>"; };
+		0B54D5E124B305D200D7E591 /* CallWebJSController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallWebJSController.m; sourceTree = "<group>"; };
 		0BE2D2AA24ACB462007058C1 /* WeakWKScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakWKScriptMessageHandler.h; sourceTree = "<group>"; };
 		0BE2D2AB24ACB462007058C1 /* WeakWKScriptMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakWKScriptMessageHandler.m; sourceTree = "<group>"; };
 		0BF1124024AAD69000587211 /* testMouse.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testMouse.html; sourceTree = "<group>"; };
@@ -90,6 +105,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B54D5D924B2C0C600D7E591 /* wkJSBfidge */ = {
+			isa = PBXGroup;
+			children = (
+				0BF1124024AAD69000587211 /* testMouse.html */,
+				0B22B82524AF4D9C006BC936 /* MAUDWKWebView.h */,
+				0B22B82624AF4D9C006BC936 /* MAUDWKWebView.m */,
+				0BE2D2AA24ACB462007058C1 /* WeakWKScriptMessageHandler.h */,
+				0BE2D2AB24ACB462007058C1 /* WeakWKScriptMessageHandler.m */,
+				0B22B82824AF4F64006BC936 /* NAJSMethodController.h */,
+				0B22B82924AF4F64006BC936 /* NAJSMethodController.m */,
+				0B54D5E024B305D200D7E591 /* CallWebJSController.h */,
+				0B54D5E124B305D200D7E591 /* CallWebJSController.m */,
+				0B54D5DA24B2C16700D7E591 /* MAUDWKWVDelegate.h */,
+				0B54D5DB24B2C16700D7E591 /* MAUDWKWVDelegate.m */,
+				0B54D5DD24B3014B00D7E591 /* GNAJSMethodsManager.h */,
+				0B54D5DE24B3014B00D7E591 /* GNAJSMethodsManager.m */,
+			);
+			path = wkJSBfidge;
+			sourceTree = "<group>";
+		};
 		0BF8E46424A9D1910016E140 = {
 			isa = PBXGroup;
 			children = (
@@ -114,21 +149,19 @@
 		0BF8E46F24A9D1910016E140 /* WKWebViewJSBridge */ = {
 			isa = PBXGroup;
 			children = (
-				0BF1124024AAD69000587211 /* testMouse.html */,
+				0B54D5D924B2C0C600D7E591 /* wkJSBfidge */,
 				0BF8E47024A9D1910016E140 /* AppDelegate.h */,
 				0BF8E47124A9D1910016E140 /* AppDelegate.m */,
+				0BF8E47C24A9D1950016E140 /* main.m */,
 				0BF8E47324A9D1910016E140 /* ViewController.h */,
 				0BF8E47424A9D1910016E140 /* ViewController.m */,
 				0BF8E47624A9D1950016E140 /* Assets.xcassets */,
 				0BF8E47824A9D1950016E140 /* Main.storyboard */,
 				0BF8E47B24A9D1950016E140 /* Info.plist */,
-				0BF8E47C24A9D1950016E140 /* main.m */,
 				0BF8E47E24A9D1950016E140 /* WKWebViewJSBridge.entitlements */,
 				0BF8E4A024A9D1D70016E140 /* WKWindowController.h */,
 				0BF8E4A124A9D1D70016E140 /* WKWindowController.m */,
 				0BF8E4A224A9D1D70016E140 /* WKWindowController.xib */,
-				0BE2D2AA24ACB462007058C1 /* WeakWKScriptMessageHandler.h */,
-				0BE2D2AB24ACB462007058C1 /* WeakWKScriptMessageHandler.m */,
 			);
 			path = WKWebViewJSBridge;
 			sourceTree = "<group>";
@@ -292,8 +325,13 @@
 			files = (
 				0BF8E47524A9D1910016E140 /* ViewController.m in Sources */,
 				0BF8E4A324A9D1D70016E140 /* WKWindowController.m in Sources */,
+				0B54D5DF24B3014C00D7E591 /* GNAJSMethodsManager.m in Sources */,
+				0B22B82724AF4D9C006BC936 /* MAUDWKWebView.m in Sources */,
 				0BE2D2AC24ACB462007058C1 /* WeakWKScriptMessageHandler.m in Sources */,
 				0BF8E47D24A9D1950016E140 /* main.m in Sources */,
+				0B22B82A24AF4F64006BC936 /* NAJSMethodController.m in Sources */,
+				0B54D5E224B305D200D7E591 /* CallWebJSController.m in Sources */,
+				0B54D5DC24B2C16700D7E591 /* MAUDWKWVDelegate.m in Sources */,
 				0BF8E47224A9D1910016E140 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

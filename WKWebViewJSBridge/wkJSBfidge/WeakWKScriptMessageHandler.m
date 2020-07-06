@@ -10,6 +10,7 @@
 
 
 @interface WeakWKScriptMessageHandler ()
+//这个wkScriptDelegate弱引用当前webViewNA方法的具体执行者，避免不能释放问题
 @property (nonatomic, weak) id <WKScriptMessageHandler> wkScriptDelegate;
 @end
 
