@@ -62,5 +62,14 @@
     return info;
 }
 
+- (void)addCustomScript:(NSString*)script {
+    WKUserScript *wkScript = [[WKUserScript alloc] initWithSource:script injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:YES];
+    [self.webView.configuration.userContentController addUserScript:wkScript];
+}
+
+- (void)setOverFlowHidden {
+    //防止滑动时显示父View
+    [self addCustomScript:@"document.documentElement.style.overflow='hidden'"];
+}
 
 @end

@@ -9,6 +9,10 @@
 click here
 </div>
 
+<div id ="mouse"
+    <button id="btn1" type = "button" onclick = "callNAGlobalThrowEvent()" style="background-color:#114A38;" > throw event  </button>
+</div>
+
 <p id="naCallBackObjId" style="text-align: center ;background-color: #aab511"> label info </p>
 
 <script>
@@ -36,6 +40,10 @@ function mUp(obj)
 {
     obj.style.backgroundColor=randomColor();
     obj.innerHTML="mouse up"
+}
+
+function callNAGlobalThrowEvent() {
+    window.MAUDScript.ThrowEvent("btnClick", {"param":"vv"}, "qqq");
 }
 
 function callBackToJS(paramsss)

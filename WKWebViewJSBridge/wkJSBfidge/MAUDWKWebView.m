@@ -26,6 +26,7 @@
 
 - (void)disposeResource {
     [[self configuration].userContentController removeScriptMessageHandlerForName:[GNAJSMethodsManager globalBaseNativeMethodName4JS]];
+    [[self configuration].userContentController removeAllUserScripts];
 }
 
 - (void)willOpenMenu:(NSMenu *)menu withEvent:(NSEvent *)event {
@@ -33,6 +34,16 @@
         //控制item是否隐藏
         item.hidden = NO;
     }
+}
+
++ (NSString *)customScriptString {
+    return @"window.MAUDScript = {};\
+    window.MAUDScript.ThrowEvent = function(method,param,callback) {\
+            window.webkit.messageHandlers.ThrowEvent.postMessage({'method':method,\
+                                                                    'param':param,\
+                                                                'callback':callback\
+            });\
+    };";
 }
 
 + (WKWebViewConfiguration *)configurationWithJSTarget:(NAJSMethodController *)jsTarget {
@@ -46,6 +57,12 @@
     WKUserContentController *userContentController = [[WKUserContentController alloc] init];
     //注册JS调用到NA端后，NA端的统一处理函数
     [userContentController addScriptMessageHandler:weakScriptMessageDelegate name:[GNAJSMethodsManager globalBaseNativeMethodName4JS]];
+    {
+    //JS以throwEvent的方式调用端上。端上在WKUserContentController的回调里处理throwEvent方法的参数，如method,param,callback。
+        [userContentController addScriptMessageHandler:weakScriptMessageDelegate name:@"ThrowEvent"];
+        WKUserScript *wkScript = [[WKUserScript alloc] initWithSource:[self customScriptString] injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:YES];
+        [userContentController addUserScript:wkScript];
+    }
 
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     configuration.preferences = preference;
@@ -59,6 +76,7 @@
     webView.UIDelegate = webViewDelegate;
     webView.navigationDelegate = webViewDelegate;
     webView.callWebJSController = [[CallWebJSController alloc] initWithWebView:webView];
+    [webView.callWebJSController setOverFlowHidden]; //避免滑动时显示父view
     [jsTarget insertCallBackToWebJSController:webView.callWebJSController];
     return webView;
 }

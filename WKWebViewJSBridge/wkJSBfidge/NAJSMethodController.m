@@ -38,7 +38,7 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
 
     NSString *nativeMethodName = message.name;
-    if (![nativeMethodName isEqualToString:[GNAJSMethodsManager globalBaseNativeMethodName4JS]]) {
+    if (![nativeMethodName isEqualToString:[GNAJSMethodsManager globalBaseNativeMethodName4JS]] && ![nativeMethodName isEqualToString:@"ThrowEvent"]) {
         return;
     }
 
@@ -53,7 +53,7 @@
     NSString *methodRightPart = @":callBack:";
     NSString *fullMethodName = [NSString stringWithFormat:@"%@%@", methodName,methodRightPart];
     SEL selector = NSSelectorFromString(fullMethodName);
-    
+
     if (self.nsjsMethodsManager && [self.nsjsMethodsManager respondsToSelector:selector]) {
         IMP imp = [self.nsjsMethodsManager methodForSelector:selector];
         void (*func)(id, SEL, id, id) = (void *)imp;
