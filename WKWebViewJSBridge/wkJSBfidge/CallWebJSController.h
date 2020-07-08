@@ -13,7 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CallWebJSController : NSObject
 - (instancetype)initWithWebView:(WKWebView *)webView;
+- (void)callBackTOWebView:(NSString *)methodName params:(NSArray *)params;
 - (void)callWebViewPrintData;
+- (void)callWebViewAppear;
+- (void)callWebViewDisAppear;
 @end
 
 NS_ASSUME_NONNULL_END

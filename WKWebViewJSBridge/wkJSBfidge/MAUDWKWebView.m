@@ -28,10 +28,18 @@
     [[self configuration].userContentController removeScriptMessageHandlerForName:[GNAJSMethodsManager globalBaseNativeMethodName4JS]];
 }
 
+- (void)willOpenMenu:(NSMenu *)menu withEvent:(NSEvent *)event {
+    for (NSMenuItem *item in menu.itemArray) {
+        //控制item是否隐藏
+        item.hidden = NO;
+    }
+}
+
 + (WKWebViewConfiguration *)configurationWithJSTarget:(NAJSMethodController *)jsTarget {
     WKPreferences *preference = [[WKPreferences alloc] init];
     preference.javaScriptEnabled = YES;
     preference.javaScriptCanOpenWindowsAutomatically = YES;
+    [preference setValue:@(YES) forKey:@"developerExtrasEnabled"];
 
     WeakWKScriptMessageHandler *weakScriptMessageDelegate = [[WeakWKScriptMessageHandler alloc] initWithDelegate:jsTarget];
 

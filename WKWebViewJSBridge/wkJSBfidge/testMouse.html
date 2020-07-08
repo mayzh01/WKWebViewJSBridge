@@ -12,9 +12,22 @@ click here
 <p id="naCallBackObjId" style="text-align: center ;background-color: #aab511"> label info </p>
 
 <script>
+
+    window.MAUDScriptObj = {};
+    window.MAUDScriptObj.page = {};
+    window.MAUDScriptObj.page.printf = function(param) {
+        console.log("call back to js:", param);
+    }
+    window.MAUDScriptObj.page.viewDidAppear = function(param) {
+        console.log(param);
+    }
+    window.MAUDScriptObj.page.viewDidDisAppear = function(param) {
+        console.log(param);
+    }
+
 function mDown(obj)
 {
-    window.webkit.messageHandlers.callNativeMethod.postMessage({"methodName":"downMethod", "param":"aa"});
+    baseCallNAMethodADCallBack("MAUDScriptObj_TONA_MouseDown", JSON.stringify({"param1":"aa", "param2":"bb"}), "window.MAUDScriptObj.page.printf");
     obj.style.backgroundColor=randomColor();
     obj.innerHTML="mouse down"
 }
@@ -30,6 +43,10 @@ function callBackToJS(paramsss)
     var param = paramsss;
     console.log(param);
     document.getElementById('naCallBackObjId').innerHTML = paramsss;
+}
+
+function baseCallNAMethodADCallBack(name, param, callBack) {
+    window.webkit.messageHandlers.callNativeMethod.postMessage({"methodName":name, "param":param, "JSCallBack":callBack});
 }
 
 function randomColor()

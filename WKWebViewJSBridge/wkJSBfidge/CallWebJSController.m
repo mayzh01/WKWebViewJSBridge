@@ -34,6 +34,14 @@
     }];
 }
 
+- (void)callWebViewAppear {
+    [self callBackTOWebView:@"MAUDScriptObj.page.viewDidAppear" params:@[[NSString stringWithFormat:@"view appear:%@", self.webView]]];
+}
+
+- (void)callWebViewDisAppear {
+    [self callBackTOWebView:@"MAUDScriptObj.page.viewDidDisAppear" params:@[[NSString stringWithFormat:@"view disappear:%@", self.webView]]];
+}
+
 - (void)callWebViewPrintData {
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd HH-mm-ss";
